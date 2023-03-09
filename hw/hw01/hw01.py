@@ -14,9 +14,9 @@ def a_plus_abs_b(a, b):
     3
     """
     if b < 0:
-        f = _____
+        f = sub
     else:
-        f = _____
+        f = add
     return f(a, b)
 
 
@@ -44,7 +44,7 @@ def two_of_three(i, j, k):
     >>> two_of_three(5, 5, 5)
     50
     """
-    return _____
+    return i * i + j * j + k * k - pow(max(i, j, k), 2)
 
 
 def two_of_three_syntax_check():
@@ -68,7 +68,10 @@ def largest_factor(n):
     >>> largest_factor(13) # factor is 1 since 13 is prime
     1
     """
-    "*** YOUR CODE HERE ***"
+    x = n - 1
+    while n % x != 0:
+        x -= 1
+    return x
 
 
 def hailstone(n):
@@ -90,4 +93,13 @@ def hailstone(n):
     >>> b
     1
     """
-    "*** YOUR CODE HERE ***"
+    count = 1
+    print(n)
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = n * 3 + 1
+        count += 1
+        print(n)
+    return count
