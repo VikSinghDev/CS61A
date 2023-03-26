@@ -53,4 +53,12 @@ def double_eights(n):
     >>> double_eights(80808080)
     False
     """
-    "*** YOUR CODE HERE ***"
+    prev = None
+    while n > 0:
+        curr = n % 10
+        n = n // 10
+        if curr == prev == 8:
+            return True
+        else:
+            prev = curr
+    return False
